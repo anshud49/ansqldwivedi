@@ -6,6 +6,17 @@ This project is a **web-based SQL query runner** that allows users to write and 
 ---
 ## Major Depenedency
  CodeEditor is configured through [CodeMirror](https://codemirror.net/)
+
+## Performance Metrics
+
+***Largest Contentful Paint (LCP)***: 0.47s - This indicates a fast loading experience for the main content.
+
+***Cumulative Layout Shift (CLS)***: 0.00  - This signifies a stable visual experience with no unexpected layout shifts.
+
+***Interaction to Next Paint (INP)***: 8ms - This shows a highly responsive application with minimal delay in user interactions.
+
+***Page Load Time***: oscillating between 0.5-1 sec measured by "Page Load Timer Extension"
+
 ## Features
 
 ### **Core Features**
