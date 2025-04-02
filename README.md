@@ -29,7 +29,7 @@ This project is a **web-based SQL query runner** that allows users to write and 
 - **UI Libraries**: CodeMirror for query editor
 - **State Management**: React Hooks & LocalStorage
 - **Data Handling**: JSON processing (converted from CSV)
-- **Deployment**: Netlify/Vercel
+- **Deployment**: Vercel
 
 ---
 
@@ -58,7 +58,7 @@ This project is a **web-based SQL query runner** that allows users to write and 
 - **GitHub Repository**: [Project Repo](https://github.com/anshud49/ansqldwivedi)
 - **Live Demo**: [Deployed Link](https://ansqldwivedi.vercel.app/)
 - **Video Walkthrough**: [Video Link]
-- **ER Diagram**: [Diagrams](https://drive.google.com/file/d/1baCxFjSoqtPzf7SfdWZkio1nl_cXWhh_/view?usp=drive_link)
+- **ER Diagram & System Design**: [Diagram](https://drive.google.com/file/d/1baCxFjSoqtPzf7SfdWZkio1nl_cXWhh_/view?usp=drive_link)
 
 ---
 
