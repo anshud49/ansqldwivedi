@@ -4,8 +4,8 @@ import "../css/Table.css";
 export default function Table({ selectedTable = "customers", setSelectedTable = () => { }, setQuery, fullscreen }) {
     const [data, setData] = useState([]);
     const [allData, setAllData] = useState([]); // Store full data
-    const [displayCount, setDisplayCount] = useState(500); 
-    const chunkSize = 500; 
+    const [displayCount, setDisplayCount] = useState(300); 
+    const chunkSize = 300; 
     const tableOptions = [
         "categories",
         "customers",
