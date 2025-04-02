@@ -197,7 +197,7 @@ const App = () => {
 
       <div className="main-container">
         <div className={`SQL-Code-Editor ${fullscreenSection === "editor" ? "fullscreen" : ""} ${isHidden("editor") ? "hidden" : ""}`}>
-          <SQLQueryEditor query={query} setQuery={setQuery} height={fullscreenSection === "editor" ? "93vh" : "60vh"} />
+          <SQLQueryEditor query={query} setQuery={setQuery} height={fullscreenSection === "editor" ? "99vh" : "60vh"} />
           <button className="Run"
             style={{
               bottom: fullscreenSection === "editor" ? "10px" : "4px",
