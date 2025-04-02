@@ -86,7 +86,7 @@ button {
   right:220px;
   width:30px;
   height:30px;
-  border-color:rgba(0, 0, 0, 0.622);
+  border:1px solid #ccc;
   opacity: .7;
 }
 .result-icon
@@ -125,4 +125,16 @@ button {
 
 .hidden {
   display: none !important;
+}
+
+@media (max-width: 768px)
+{
+  .main-container
+  {
+    flex-direction: column;
+  }
+  .SQL-Code-Editor ,.SQL-View  
+  {
+    width: 100%;
+  }
 }

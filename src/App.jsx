@@ -16,7 +16,7 @@ const App = () => {
 
 
 
-  
+
   const [fullscreenSection, setFullscreenSection] = useState(
     localStorage.getItem("fullscreenSection") === "null" ? null : localStorage.getItem("fullscreenSection")
   );
@@ -28,6 +28,7 @@ const App = () => {
         const employeeTerritories = await import("./json/employee_territories.json");
         const employees = await import("./json/employees.json");
         const products = await import("./json/products.json");
+        const fraudData = await import("./json/fraud_data.json");
 
         setTableData({
           customers: customers.default,
@@ -35,6 +36,7 @@ const App = () => {
           employee_territories: employeeTerritories.default,
           employees: employees.default,
           products: products.default,
+          fraud_data: fraudData.default,
         });
       } catch (error) {
         console.error("Error loading JSON files:", error);
@@ -74,6 +76,33 @@ const App = () => {
         });
         return filteredRow;
       });
+    }
+
+
+    const cleanCondition = condition.trim();
+    const rowMatch = cleanCondition.match(/row\s*=\s*["']?(\d+)["']?/i);
+
+    if (rowMatch) {
+      const rowIndex = parseInt(rowMatch[1], 10) - 1; 
+      if (rowIndex >= 0 && rowIndex < data.length) {
+        const row = data[rowIndex];
+        const normalizedRow = Object.fromEntries(
+          Object.entries(row).map(([key, val]) => [key.toLowerCase(), val])
+        );
+
+        if (fields.includes("*")) return [normalizedRow];
+
+        const filteredRow = {};
+        fields.forEach((f) => {
+          const lowerF = f.toLowerCase();
+          if (normalizedRow.hasOwnProperty(lowerF)) {
+            filteredRow[f] = normalizedRow[lowerF];
+          }
+        });
+        return [filteredRow];
+      } else {
+        return ["Row not found"];
+      }
     }
 
     const [field, operator, value] = condition
@@ -126,6 +155,7 @@ const App = () => {
     });
   };
 
+
   const handleRunQuery = () => {
     const { fields, tableName, condition } = parseQuery(query);
 
@@ -152,11 +182,11 @@ const App = () => {
   const handleFullscreen = (section) => {
     setFullscreenSection(fullscreenSection === section ? null : section);
   };
-  
+
   useEffect(() => {
     localStorage.setItem("fullscreenSection", fullscreenSection);
   }, [fullscreenSection]);
-  
+
   const isHidden = (section) => fullscreenSection && fullscreenSection !== section;
 
   return (
@@ -191,12 +221,13 @@ const App = () => {
 
         <div className={`SQL-View ${fullscreenSection === "view" ? "fullscreen" : ""} ${isHidden("view") ? "hidden" : ""}`}>
           <div className="Table-View">
-            <Table selectedTable={selectedTable} setSelectedTable={setSelectedTable} setQuery={setQuery} />
+            <Table selectedTable={selectedTable} setSelectedTable={setSelectedTable} setQuery={setQuery} fullscreen={fullscreenSection === "view"} />
+
           </div>
           <div className="fullscreen-icon view-icon" onClick={() => handleFullscreen("view")}
             style={{
-              top: fullscreenSection === "view" ? "44px" : "53.3px",
-              right: fullscreenSection === "view" ? "240px" : "220px",
+              top: fullscreenSection === "view" ? "40px" : "49px",
+              right: fullscreenSection === "view" ? "63px" : "35px",
             }}>
             {fullscreenSection === "view" ? <FaCompress /> : <FaExpand />}
           </div>
@@ -215,13 +246,15 @@ const App = () => {
 
         <div
           className="fullscreen-icon clear-icon broom"
-          onClick={() => setResult(null)}
+          onClick={() => {setResult(null) 
+            setError(null)
+          }}
           style={{
             position: "absolute",
             top: fullscreenSection === "result" ? "20px" : "10px",
             right: fullscreenSection === "result" ? "55px" : "45px",
-            opacity: result ? "1" : "0.5",
-            pointerEvents: result ? "auto" : "none",
+            opacity: (result ||error) ? "1" : "0.5",
+            pointerEvents: (result ||error)  ? "auto" : "none",
           }}>
           <FontAwesomeIcon icon={faBroom} />
         </div>

@@ -75,6 +75,28 @@
     transition: 0.3s;
   }
   
+  .header
+  {
+    position: relative;
+  }
+  .header select
+  {
+    position: absolute;
+    left:110px;
+  }
+
+  .table-container
+  {
+    position:relative;
+  }
+   .load-more-btn
+  {
+    width:90px;
+    height:30px;
+    position: absolute;
+    border:1px solid #ccc;
+    background-color: white;
+  }
   @media (max-width: 768px) {
     .table-container {
       width: 100%;

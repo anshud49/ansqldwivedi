@@ -59,4 +59,17 @@
   .sql-output::-webkit-scrollbar-thumb:hover {
     background: #777;
   }
-  
+  .sql-result-container
+  {
+    position: relative;
+  }
+  .load-more-result
+  {
+    position:absolute;  
+    width:90px;
+    height:28px;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: white;
+    font-weight: 520;
+  }
