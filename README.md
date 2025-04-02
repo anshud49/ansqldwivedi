@@ -4,7 +4,8 @@
 This project is a **web-based SQL query runner** that allows users to write and execute **SQL-like queries** on mock data. It provides a **CodeMirror-based editor** for query input, a **dynamic result table**, and interactive features like **click-to-generate queries**, **fullscreen toggle**, and **chunk-based loading** for large datasets.
 
 ---
-
+## Major Depenedency
+ CodeEditor is configured through [CodeMirror](https://codemirror.net/)
 ## Features
 
 ### **Core Features**
