@@ -11,7 +11,7 @@ const writeStream = fs.createWriteStream(jsonFilePath);
 let rowCount = 0;
 const maxRows = 100000;
 const results = [];
-let parsingStopped = false; // To prevent multiple writes
+let parsingStopped = false; 
 
 Papa.parse(readStream, {
   header: true,
@@ -24,25 +24,25 @@ Papa.parse(readStream, {
     }
 
     if (rowCount === maxRows && !parsingStopped) {
-      parsingStopped = true; // Mark parsing as stopped
-      console.log(`✅ Processed ${maxRows} rows. Stopping further parsing.`);
-      parser.abort(); // Stop parsing immediately
-      readStream.close(); // Ensure the file stream is closed
+      parsingStopped = true; 
+      console.log(`Processed ${maxRows} rows. Stopping further parsing.`);
+      parser.abort(); 
+      readStream.close(); 
     }
   },
   complete: () => {
     if (parsingStopped) {
-      console.log(`✅ Writing ${maxRows} rows to JSON file...`);
+      console.log(`Writing ${maxRows} rows to JSON file...`);
       fs.writeFile(jsonFilePath, JSON.stringify(results, null, 2), (err) => {
         if (err) {
-          console.error(`❌ Error writing ${fileName}.json:`, err);
+          console.error(`Error writing ${fileName}.json:`, err);
         } else {
-          console.log(`✅ JSON file created at: ${jsonFilePath} with ${maxRows} rows`);
+          console.log(`JSON file created at: ${jsonFilePath} with ${maxRows} rows`);
         }
       });
     }
   },
   error: (err) => {
-    console.error(`❌ Error parsing CSV:`, err);
+    console.error(` Error parsing CSV:`, err);
   }
 });
