@@ -235,7 +235,8 @@ const App = () => {
       </div>
 
       <div className={`SQL-Result ${fullscreenSection === "result" ? "fullscreen" : ""} ${isHidden("result") ? "hidden" : ""}`}>
-        <SQLResult result={result} error={error} height={fullscreenSection === "result" ? "100%" : "220px"} />
+        <SQLResult result={result} error={error} height={fullscreenSection === "result" ? "100%" : "32vh"} 
+        />
         <div className="fullscreen-icon result-icon" onClick={() => handleFullscreen("result")}
           style={{
             top: fullscreenSection === "result" ? "20px" : "10px",
