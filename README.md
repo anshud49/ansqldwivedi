@@ -3,6 +3,14 @@
 ## Project Overview
 This project is a **web-based SQL query runner** that allows users to write and execute **SQL-like queries** on mock data. It provides a **CodeMirror-based editor** for query input, a **dynamic result table**, and interactive features like **click-to-generate queries**, **fullscreen toggle**, and **chunk-based loading** for large datasets.
 
+[Live Link](https://ansqldwivedi.vercel.app/)
+
+[Video Demonstration](https://youtu.be/fV5g0I_t1NY)
+
+[Explanation PDF](https://drive.google.com/file/d/1cwggThw1hI5qWkDwkSMqAC64ugHh0E7L/view?usp=sharing)
+
+[ER Diagram & System Design](https://drive.google.com/file/d/1baCxFjSoqtPzf7SfdWZkio1nl_cXWhh_/view?usp=drive_link)
+
 ---
 ## Major Depenedency
  CodeEditor is configured through [CodeMirror](https://codemirror.net/)
