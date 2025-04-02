@@ -1,0 +1,128 @@
+.SQL-Atlan {
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: auto;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.SQL-Code-Editor {
+
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  gap:8px;
+  position: relative;
+}
+
+button {
+  width:140px;
+  padding:5px 8px;
+  border-radius: 5px;
+  border-color: black;
+  cursor: pointer;
+  color:black;
+  margin-left: 3px;
+  position: absolute;
+  bottom: 4px;
+  right:4px;
+}
+
+
+.SQL-View
+{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  width:50%;
+  height: 62vh;
+  padding-top: 20px;
+}
+.Table-View
+{
+  width:100%;
+  height: 100%;
+}
+
+.editor-icon
+{
+  bottom: 5px;
+  right:150px;
+}
+.editor-icon,.view-icon,.result-icon
+{
+  position:absolute;
+  width:30px;
+  height:27px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:2px solid;
+  border-color: black;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.SQL-View,.SQL-Result
+{
+  position: relative;
+}
+.view-icon
+{
+  top:53.3px;
+  right:220px;
+  width:30px;
+  height:30px;
+  border-color:rgba(0, 0, 0, 0.622);
+  opacity: .7;
+}
+.result-icon
+{
+  top:10px;
+  right:10px;
+  border:2px solid black;
+}
+
+.broom
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width:27px;
+  height:27px;
+  border:2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none !important;
+}
