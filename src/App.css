@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100%;
+  height: max-content;
 }
 
 .SQL-Code-Editor {
@@ -45,11 +45,14 @@ button {
 {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap:10px;
   width:50%;
-  height: 62vh;
+  height: 70vh;
   padding-top: 20px;
 }
+
 .Table-View
 {
   width:100%;
@@ -84,8 +87,8 @@ button {
 {
   top:53.3px;
   right:220px;
-  width:30px;
-  height:30px;
+  width:26px;
+  height:26px;
   border:1px solid #ccc;
   opacity: .7;
 }
@@ -114,24 +117,32 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   background: white;
-  z-index: 1000;
+  z-index: 10;
   padding: 10px;
+  padding-bottom: 20px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
+}
+
+.Run,.editor-icon
+{
+  z-index: 100;
 }
 
 .hidden {
   display: none !important;
 }
 
-@media (max-width: 768px)
+@media (max-width: 860px)
 {
   .main-container
   {
     flex-direction: column;
+    margin-bottom: 5vh;
   }
   .SQL-Code-Editor ,.SQL-View  
   {

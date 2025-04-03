@@ -1,6 +1,6 @@
 .table-container {
     width: 95%;
-    height:100%;
+    height:90%;
     margin: 15px auto;
     padding: 15px;
     border: 1px solid #ccc;
@@ -23,7 +23,7 @@
   }
   
   .table-container .header select {
-    padding: 8px 12px;
+    padding: 5px 10px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -83,6 +83,9 @@
   {
     position: absolute;
     left:110px;
+    width:110px;
+    height:30px;
+    border-radius: 4px;
   }
 
   .table-container
@@ -98,10 +101,6 @@
     background-color: white;
   }
   @media (max-width: 768px) {
-    .table-container {
-      width: 100%;
-      padding: 10px;
-    }
   
     .table-container th, td {
       padding: 8px;

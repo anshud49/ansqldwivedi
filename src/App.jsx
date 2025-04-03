@@ -197,11 +197,11 @@ const App = () => {
 
       <div className="main-container">
         <div className={`SQL-Code-Editor ${fullscreenSection === "editor" ? "fullscreen" : ""} ${isHidden("editor") ? "hidden" : ""}`}>
-          <SQLQueryEditor query={query} setQuery={setQuery} height={fullscreenSection === "editor" ? "99vh" : "60vh"} />
+          <SQLQueryEditor query={query} setQuery={setQuery} height={fullscreenSection === "editor" ? "98vh" : "70vh"} />
           <button className="Run"
             style={{
-              bottom: fullscreenSection === "editor" ? "10px" : "4px",
-              right: fullscreenSection === "editor" ? "17px" : "4px",
+              bottom: fullscreenSection === "editor" ? "1.8vh" : "4px",
+              right: fullscreenSection === "editor" ? "2vh" : "4px",
             }}
             onClick={handleRunQuery}
           >
@@ -210,7 +210,7 @@ const App = () => {
           <div
             className="fullscreen-icon editor-icon"
             style={{
-              bottom: fullscreenSection === "editor" ? "11px" : "5px",
+              bottom: fullscreenSection === "editor" ? "2vh" : "5px",
               right: fullscreenSection === "editor" ? "160px" : "150px",
             }}
             onClick={() => handleFullscreen("editor")}
@@ -225,9 +225,9 @@ const App = () => {
 
           </div>
           <div className="fullscreen-icon view-icon" onClick={() => handleFullscreen("view")}
-            style={{
-              top: fullscreenSection === "view" ? "40px" : "49px",
-              right: fullscreenSection === "view" ? "63px" : "35px",
+             style={{
+              top: fullscreenSection === "view" ? ("41px") : (window.innerWidth <= 860 ? "46px" : "51px"),
+              right: fullscreenSection === "view" ? (window.innerWidth <= 860 ? "50px" : "65px") : (window.innerWidth <= 860 ? "39px" : "35px"),
             }}>
             {fullscreenSection === "view" ? <FaCompress /> : <FaExpand />}
           </div>
