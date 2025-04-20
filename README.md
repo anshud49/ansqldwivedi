@@ -77,7 +77,7 @@ This project is a **web-based SQL query runner** that allows users to write and 
 ## 🔗 Deployment & Submission Details
 - **GitHub Repository**: [Project Repo](https://github.com/anshud49/ansqldwivedi)
 - **Live Demo**: [Deployed Link](https://ansqldwivedi.vercel.app/)
-- **Video Walkthrough**: [Video Link]
+- **Video Walkthrough**: [Video Link](https://www.youtube.com/watch?v=fV5g0I_t1NY)
 - **ER Diagram & System Design**: [Diagram](https://drive.google.com/file/d/1baCxFjSoqtPzf7SfdWZkio1nl_cXWhh_/view?usp=drive_link)
 
 ---
